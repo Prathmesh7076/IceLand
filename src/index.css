@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 213 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 30% 10%;
+
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 213 30% 10%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 213 10% 50%;
+
+    --accent: 210 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 35%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --iceland-navy: 213 50% 10%;
+    --iceland-navy-light: 213 40% 18%;
+    --iceland-blue: 210 100% 50%;
+    --iceland-sky: 205 80% 60%;
+    --iceland-white: 0 0% 100%;
+    --iceland-gray: 210 10% 85%;
+    --iceland-dark-overlay: 213 50% 8%;
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 213 50% 10%;
+    --foreground: 0 0% 98%;
+    --card: 213 40% 14%;
+    --card-foreground: 0 0% 98%;
+    --popover: 213 40% 14%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 213 30% 20%;
+    --muted-foreground: 210 15% 65%;
+    --accent: 210 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 213 30% 20%;
+    --input: 213 30% 20%;
+    --ring: 210 100% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-iceland-navy {
+    color: hsl(var(--iceland-navy));
+  }
+  .bg-iceland-navy {
+    background-color: hsl(var(--iceland-navy));
+  }
+  .bg-iceland-navy-light {
+    background-color: hsl(var(--iceland-navy-light));
+  }
+  .text-iceland-white {
+    color: hsl(var(--iceland-white));
+  }
+  .bg-iceland-dark-overlay {
+    background-color: hsl(var(--iceland-dark-overlay));
+  }
+  .border-iceland-blue {
+    border-color: hsl(var(--iceland-blue));
+  }
+  .bg-iceland-blue {
+    background-color: hsl(var(--iceland-blue));
+  }
+}
