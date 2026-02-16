@@ -46,13 +46,13 @@ const HeroSection = () => {
         </p>
 
         {/* === SEARCH BAR === */}
-        <div className="relative w-full max-w-[940px] mx-auto">
+        <div className="relative w-full max-w-[780px] mx-auto">
           <div 
             className="flex items-center bg-[#1e2330] border-[#1890c7] transition-all shadow-[0_0_40px_rgba(14,165,233,0.6)] hover:shadow-[0_0_55px_rgba(14,165,233,0.8)]"
             style={{
-              height: "114px",
+              height: "100px",
               borderRadius: "29.26px",
-              borderWidth: "4.04px",
+              borderWidth: "3.04px",
               paddingTop: "13.12px",
               paddingBottom: "13.12px",
               paddingLeft: "45.4px",
@@ -61,7 +61,7 @@ const HeroSection = () => {
             }}
           >
             <div className="relative flex-shrink-0">
-              <Search className="text-white w-8 h-8 stroke-[2.5]" />
+              <Search className="text-white w-8 h-8  stroke-[2.5]" />
               <Sparkles className="text-white absolute -top-1 -right-2 w-3 h-3 fill-white" />
             </div>
             
