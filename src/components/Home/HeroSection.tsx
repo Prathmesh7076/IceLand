@@ -46,36 +46,27 @@ const HeroSection = () => {
         </p>
 
         {/* === SEARCH BAR === */}
-        <div className="relative w-full max-w-[780px] mx-auto">
-          <div 
-            className="flex items-center bg-[#1e2330] border-[#1890c7] transition-all shadow-[0_0_40px_rgba(14,165,233,0.6)] hover:shadow-[0_0_55px_rgba(14,165,233,0.8)]"
-            style={{
-              height: "100px",
-              borderRadius: "29.26px",
-              borderWidth: "3.04px",
-              paddingTop: "13.12px",
-              paddingBottom: "13.12px",
-              paddingLeft: "45.4px",
-              paddingRight: "45.4px",
-              gap: "10.09px"
-            }}
-          >
-            <div className="relative flex-shrink-0">
-              <Search className="text-white w-8 h-8  stroke-[2.5]" />
-              <Sparkles className="text-white absolute -top-1 -right-2 w-3 h-3 fill-white" />
-            </div>
-            
-            <input
-              type="text"
-              placeholder="Find your next adventure"
-              className="w-full bg-transparent text-white text-lg md:text-xl placeholder:text-gray-200 outline-none font-normal tracking-wide py-2"
-            />
-            
-            <button className="flex-shrink-0 bg-[#2d3342] hover:bg-[#3b4254] text-white p-4 rounded-xl transition-colors duration-300 group ml-2 border border-white/10">
-              <Send className="w-5 h-5 rotate-45 stroke-[2] group-hover:translate-x-0.5 transition-transform" />
-            </button>
-          </div>
-        </div>
+        <div className="relative max-w-xl mx-auto w-full mb-20 group">
+  <div className="flex items-center bg-[#1e2330] border-[4.4px] border-[#03a5ef] rounded-xl p-2 transition-all 
+    /* High-intensity permanent glow: Blur 40px, Spread 15px */
+    shadow-[0_0_30px_8px_rgba(3,165,239,0.8)]">
+    
+    <div className="relative flex-shrink-0 ml-3 mr-3">
+      <Search className="text-white w-7 h-7 stroke-[2.5]" />
+      <Sparkles className="text-white absolute -top-1 -right-2 w-3 h-3 fill-white" />
+    </div>
+
+    <input
+      type="text"
+      placeholder="What's your next adventure?"
+      className="w-full bg-transparent text-white text-lg placeholder:text-gray-400 outline-none font-normal py-2"
+    />
+
+    <button className="bg-[#272B34] hover:bg-[#1C1F28] text-white p-3 rounded-xl transition-all duration-300">
+      <Send className="w-5 h-5 rotate-45 relative left-[-2px] top-[1px]" />
+    </button>
+  </div>
+</div>
       </div>
 
       {/* === FADE TO WHITE GRADIENT === */}

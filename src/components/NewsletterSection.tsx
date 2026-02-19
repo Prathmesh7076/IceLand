@@ -25,10 +25,10 @@ const NewsletterSection = () => {
         {/* LEFT SIDE: UPDATED STYLE */}
         <div className="px-8 lg:px-16 xl:px-32">
           <h2 
-            className="text-slate-950 uppercase mb-4"
+            className="text-[#0D1926] uppercase mb-4"
             style={{
               fontFamily: "'Anton', sans-serif",
-              fontSize: "64px",
+              fontSize: "54px",
               fontWeight: 400,
               lineHeight: "100%",
               letterSpacing: "0.02em"
@@ -38,7 +38,7 @@ const NewsletterSection = () => {
           </h2>
           
           <p 
-            className="text-slate-900 mb-10 max-w-[550px]"
+            className="text-[#0D1926] mb-10 max-w-[550px]"
             style={{
               fontFamily: "'Lato', sans-serif",
               fontSize: "20px",
@@ -46,7 +46,7 @@ const NewsletterSection = () => {
               fontWeight: 400
             }}
           >
-            We don't spam. We signal. Get weekly dispatches on mountain weather, road status, and gear hacks directly from the valley.
+                  We signal. We don't spam. Get weekly updates on snow conditions and road status.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6 max-w-[500px]">
