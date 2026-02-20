@@ -32,7 +32,7 @@ const Guide = () => {
             className="text-[#0D1926] mb-4" 
             style={{ 
               fontFamily: "'Lato', sans-serif", 
-              fontSize: "24px", 
+              fontSize: "20px", 
               fontWeight: 700, 
               letterSpacing: "0.06em" 
             }}
@@ -62,14 +62,14 @@ const Guide = () => {
               />
               
               <h3 
-                className="text-[#1B232A] text-2xl uppercase mb-1" 
+                className="text-[#0D1926] text-xl uppercase mb-1" 
                 style={{ fontFamily: "'Anton', sans-serif", lineHeight: "1.2" }}
               >
                 {card.title}
               </h3>
               
               <p 
-                className="text-[#1B232A] text-sm font-lato normal-case tracking-widest opacity-90" 
+                className="text-[#0D1926] text-sm font-lato normal-case tracking-normal" 
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
                 {card.sub}

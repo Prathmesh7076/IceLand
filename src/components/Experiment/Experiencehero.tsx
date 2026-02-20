@@ -86,7 +86,7 @@ const Experiencehero = () => {
   
   {/* STAT 1 */}
   <div className="flex flex-col items-start justify-center pl-8 md:pl-16">
-    <span className="text-2xl md:text-2xl font-bold block mb-1">30</span>
+    <span className="text-xl md:text-2xl font-bold block mb-1">30</span>
     <span className="text-sm md:text-sm normal-case tracking-wider opacity-90 font-medium">
       Winters Witnessed
     </span>
@@ -94,7 +94,7 @@ const Experiencehero = () => {
 
   {/* STAT 2 (With Vertical Dividers) */}
   <div className="flex flex-col items-start justify-center border-l border-r border-white/30 px-8 md:px-16 h-16">
-    <span className="text-2xl md:text-2xl font-bold block mb-1">10,000+</span>
+    <span className="text-xl md:text-2xl font-bold block mb-1">10,000+</span>
     <span className="text-sm md:text-sm normal-case tracking-wider opacity-90 font-medium">
       First Tracks Guided
     </span>
@@ -102,7 +102,7 @@ const Experiencehero = () => {
 
   {/* STAT 3 */}
   <div className="flex flex-col items-start justify-center pl-8 md:pl-16">
-    <span className="text-2xl md:text-2xl font-bold block mb-1">0</span>
+    <span className="text-xl md:text-2xl font-bold block mb-1">0</span>
     <span className="text-sm md:text-sm normal-case tracking-wider opacity-90 font-medium">
       Compromises on Safety
     </span>

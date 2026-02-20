@@ -32,7 +32,7 @@ const Stop = () => {
             className="text-[#0D1926] mb-4" 
             style={{ 
               fontFamily: "'Lato', sans-serif", 
-              fontSize: "24px", 
+              fontSize: "20px", 
               fontWeight: 700, 
               letterSpacing: "0.06em" 
             }}
@@ -62,7 +62,7 @@ const Stop = () => {
               />
               
               <h3 
-                className="text-[#1B232A] text-2xl uppercase mb-1" 
+                className="text-[#1B232A] text-xl uppercase mb-1" 
                 style={{ fontFamily: "'Anton', sans-serif", lineHeight: "1.2" }}
               >
                 {card.title}

@@ -37,7 +37,7 @@ const Frozen = () => {
             THE FROZEN PLAYGROUND
           </h2>
           <p
-            style={{ fontFamily: "Lato", fontWeight: 700, fontSize: "24px" }}
+            style={{ fontFamily: "Lato", fontWeight: 700, fontSize: "20px" }}
             className="text-[#0D1926] normal-case tracking-wide mb-4"
           >
             High-energy. Low-friction

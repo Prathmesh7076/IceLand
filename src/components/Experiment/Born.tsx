@@ -17,7 +17,7 @@ const BornInTheValley = () => {
           
 
         {/* Descriptive Text */}
-        <p className="text-lg md:text-xl text-[#0D1926] leading-relaxed max-w-4xl mx-auto mt-10">
+        <p className="text-xl md:text-xl text-[#0D1926] leading-relaxed max-w-4xl mx-auto mt-10">
 In 1995, we didn't have a website. We had a shovel and a pot of tea. We built Hotel <br/>Iceland at the very end of the road because we wanted to be the first ones to touch the <br/> snow. Today, we remain the keepers of the valley floor. When you book an "Experience"<br/> with us, you are stepping into a 30-year-old family tradition of mountain hospitality.
         </p>
       </div>
