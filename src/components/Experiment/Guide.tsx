@@ -45,35 +45,54 @@ const Guide = () => {
           </p>
         </motion.div>
 
-        {/* IMAGE SECTION: REDUCED TOP MARGIN FOR TIGHTER ALIGNMENT */}
+        {/* IMAGE SECTION */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full -mt-2">
           {cards.map((card, i) => (
             <motion.div 
               key={i} 
-              className="flex flex-col items-center text-center"
+              // Added relative and overflow-hidden to contain the overlay inside the card
+              className="relative flex flex-col items-center text-center overflow-hidden shadow-md group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
+              {/* Main Image: Updated to match the [3/3] aspect ratio and hover from Stop page */}
               <img 
                 src={card.img} 
                 alt={card.title} 
-                className="w-full aspect-[4/3] object-cover mb-6 shadow-sm" 
+                className="w-full aspect-[3/3] object-cover transition-transform duration-700 group-hover:scale-105" 
               />
               
-              <h3 
-                className="text-[#0D1926] text-xl uppercase mb-1" 
-                style={{ fontFamily: "'Anton', sans-serif", lineHeight: "1.2" }}
-              >
-                {card.title}
-              </h3>
-              
-              <p 
-                className="text-[#0D1926] text-sm font-lato normal-case tracking-normal" 
-                style={{ fontFamily: "'Lato', sans-serif" }}
-              >
-                {card.sub}
-              </p>
+              {/* Frosted Glass Overlay (Auto-sizes to height of text + button) */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center pt-3 pb-3 px-4 border-t border-white/10">
+                
+                {/* Heading */}
+                <h3 
+                  className="text-white text-xl  mb-1 drop-shadow-md tracking-normal" 
+                  style={{ fontFamily: "'lato', sans-serif", lineHeight: "1.2" }}
+                >
+                  {card.title}
+                </h3>
+                
+                {/* Subheading */}
+                <p 
+                  className="text-white/90 text-xs font-lato normal-case tracking-normal mb-4 drop-shadow-sm" 
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  {card.sub}
+                </p>
+
+                {/* Exact Replicated Button */}
+                <div className="rounded-[6px] p-[1.5px] bg-gradient-to-r from-[#FFFFFF] to-[#00A3FF]">
+                  <button 
+                    className="bg-[#366498] text-white text-sm tracking-wide px-10 py-1.5 rounded-[4.5px] transition-colors w-full h-full hover:bg-[#2c5275]"
+                    style={{ fontFamily: "'Lato', sans-serif" }}
+                  >
+                    Join Us
+                  </button>
+                </div>
+
+              </div>
             </motion.div>
           ))}
         </div>

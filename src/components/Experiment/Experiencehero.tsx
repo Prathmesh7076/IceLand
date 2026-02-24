@@ -1,7 +1,7 @@
 import { Search, Send, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 // Ensure these paths match your assets folder
-import heroBg from "@/assets/Experianceheroback.avif";
+import heroBg from "@/assets/Experianceheroback.jpg";
 import cloudImg from "@/assets/cloud.png";
 
 const Experiencehero = () => {

@@ -1,7 +1,5 @@
 import sledgeImg from "@/assets/frozenback.avif";
 import polaroidImg from "@/assets/frozen.avif";
-// ADDED: Import for the replacement banner image
-import sledgeRunBannerImg from "@/assets/NAV.png";
 
 const Frozen = () => {
   return (
@@ -21,8 +19,6 @@ const Frozen = () => {
         {/* Side Gradients: Creates the subtle vignette fade seen in the design */}
         <div className="absolute inset-y-0 left-0 w-[15%] bg-gradient-to-r from-white/60 to-transparent" />
         <div className="absolute inset-y-0 right-0 w-[15%] bg-gradient-to-l from-white/60 to-transparent" />
-
-        {/* Bottom Gradient removed as requested to keep the bottom fully visible */}
       </div>
 
       {/* --- CONTENT AREA --- */}
@@ -63,13 +59,39 @@ const Frozen = () => {
             />
           </div>
 
-          {/* RIGHT: Replaced with Image Banner keeping exact size */}
-          <img
-            src={sledgeRunBannerImg}
-            alt="THE SLEDGE RUN"
-            style={{ width: '552px', height: '212px' }}
-            className="shrink-0 object-cover"
-          />
+          {/* RIGHT: Banner with Transparent Glass Effect (No Blur) */}
+          <div
+            className="shrink-0 flex flex-col items-center justify-center relative overflow-hidden rounded-lg bg-slate-800/50 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]"
+            style={{ 
+              width: '452px', 
+              height: '198px'
+            }}
+          >
+            <div className="relative z-10 flex flex-col items-center">
+              <h3 
+                className="text-white uppercase mb-1 drop-shadow-md text-3xl" 
+                style={{ fontFamily: "'Anton', sans-serif", lineHeight: "1.2" }}
+              >
+                THE SLEDGE RUN
+              </h3>
+              <p 
+                className="text-white/90 text-sm font-lato normal-case tracking-widest mb-6 drop-shadow-sm" 
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                Traditional wooden sleds on groomed slopes.
+              </p>
+
+              {/* Exact Replicated Gradient Border Button */}
+              <div className="rounded-[6px] p-[1.5px] bg-gradient-to-r from-[#FFFFFF] to-[#00A3FF]">
+                <button 
+                  className="bg-[#366498] text-white text-sm tracking-normal px-14 py-2 rounded-[4.5px] transition-colors w-full h-full hover:bg-[#2c5275]"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Join Us
+                </button>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>

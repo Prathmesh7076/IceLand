@@ -31,10 +31,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
-  // Decreased py-4 to py-2 for transparent, and py-2 to py-1 for scrolled
+  // 1. Check if we are currently on the legacy page
+  const isLegacyPage = location.pathname === "/legacy";
+
   const navBackgroundClass = isScrolled ? "bg-white shadow-md py-1" : "bg-transparent py-2";
-  const textColorClass = isScrolled ? "text-slate-900" : "text-white"; 
-  const logoHeightClass = "h-12 md:h-12"; // Slightly smaller logo height for tighter feel
+  
+  // 2. Text color is dark if scrolled OR if we are on the Legacy page
+  const textColorClass = isScrolled || isLegacyPage ? "text-slate-900" : "text-white"; 
+  
+  // 3. Set the correct logo (Dark logo on scroll OR on Legacy page)
+  const currentLogo = isScrolled || isLegacyPage ? logoDarkImg : logoWhiteImg;
+  
+  const logoHeightClass = "h-12 md:h-12"; 
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${navBackgroundClass}
@@ -45,7 +53,6 @@ const Navbar = () => {
       ` : ""}
     `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Decreased heights from h-20/24 to h-16/20 */}
         <div className="flex items-center justify-between h-16 md:h-20">
           
           <div className="hidden md:flex items-center gap-8">
@@ -59,7 +66,7 @@ const Navbar = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/">
               <img 
-                src={isScrolled ? logoDarkImg : logoWhiteImg} 
+                src={currentLogo} 
                 alt="Logo" 
                 className={`w-auto object-contain transition-all duration-300 ${logoHeightClass}`} 
               />
@@ -83,7 +90,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white px-6 pb-6 shadow-xl">
           {[...navLinks, ...rightLinks].map((link) => (
-            <Link key={link.label} to={link.href} className="block py-4 text-slate-900 uppercase font-medium border-b" onClick={() => setMobileOpen(false)}>
+            <Link key={link.label} to={link.href} className="block py-4 text-black uppercase font-medium border-b" onClick={() => setMobileOpen(false)}>
               {link.label}
             </Link>
           ))}

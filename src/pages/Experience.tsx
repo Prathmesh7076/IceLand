@@ -1,4 +1,3 @@
-// UPDATE THIS IMPORT PATH
 import Layout from "@/components/Layout";
 
 import Experiencehero from "@/components/Experiment/Experiencehero";
