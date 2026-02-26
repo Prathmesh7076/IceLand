@@ -23,7 +23,7 @@ const HeroSection = () => {
           className="text-iceland-white uppercase mb-4 drop-shadow-lg text-center"
           style={{ 
             fontFamily: "'Anton', sans-serif", 
-            fontSize: "100px", 
+            fontSize: "64px", 
             fontWeight: 400, 
             lineHeight: "100%", 
             letterSpacing: "0",
@@ -36,7 +36,7 @@ const HeroSection = () => {
           className="text-iceland-white/90 mb-12 drop-shadow-md text-center"
           style={{ 
             fontFamily: "'Lato', sans-serif", 
-            fontSize: "36px", 
+            fontSize: "20px", 
             fontWeight: 400, 
             lineHeight: "100%", 
             letterSpacing: "0.06em"

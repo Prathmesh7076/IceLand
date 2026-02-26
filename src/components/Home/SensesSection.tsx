@@ -1,103 +1,142 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sensesBg from "@/assets/part3back.jpg";
+// IMPORTANT: Replace these with your actual image paths from your assets folder!
+import sensesBg from "@/assets/part3back.jpg"; 
 import hotelImg from "@/assets/part31.jpg";
 import cottageImg from "@/assets/part32.jpg";
 
 const SensesSection = () => {
   return (
-    <section className="relative w-full h-[180vh] bg-black border-t border-white/10">
+    /* h-[200vh] provides the necessary scroll distance for the reveal.
+       Changed bg-white to bg-[#090909] to match the dark theme of this section.
+    */
+    <section className="relative w-full h-[200vh] bg-[#090909]">
+      
+      {/* LAYER 1: STICKY BACKGROUND */}
       <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
-        <img src={sensesBg} alt="Senses" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
+        <img 
+          src={sensesBg} 
+          alt="The Senses" 
+          /* Darkened the background image slightly so the white text pops perfectly */
+          className="w-full h-[110%] object-cover scale-110 -translate-y-10 opacity-50" 
+        />
+        
+        {/* PERFECT BLEND: Multi-stop black gradient to blend with the dark theme */}
+        <div className="absolute inset-0 z-10 pointer-events-none">
+        </div>
       </div>
 
+      {/* LAYER 2: SCROLLING CONTENT */}
       <div className="relative z-30 -mt-[100vh] w-full">
-        <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-[25vh]">
+        <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-[25vh] pb-20">
           <motion.div
-            className="max-w-7xl mx-auto text-center w-full"
-            initial={{ opacity: 0, y: 100 }}
+            className="max-w-[1300px] mx-auto text-center w-full"
+            initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: false }}
           >
-            <h2
-              style={{
-                fontFamily: "Anton",
+            {/* HEADING */}
+            <h2 
+              style={{ 
+                fontFamily: "'Anton', sans-serif",
                 fontWeight: 400,
-                fontSize: "80px",
+                fontSize: "54px", // Matches your previous section headings
                 lineHeight: "100%",
                 letterSpacing: "0%",
                 textAlign: "center",
                 textTransform: "uppercase",
-                color: "white",
-                marginBottom: "16px",
+                color: "#FFFFFF", // Changed to white for dark theme
+                marginBottom: "16px" 
               }}
             >
-              THE SENSES
+              The Senses
             </h2>
-            <p
-              style={{
-                fontFamily: "Lato",
+            
+            {/* SUBHEADING */}
+            <p 
+              style={{ 
+                fontFamily: "'Lato', sans-serif, bold",
                 fontWeight: 700,
-                fontSize: "36.81px",
+                fontSize: "20px",
                 lineHeight: "100%",
                 letterSpacing: "0%",
                 textAlign: "center",
-                color: "#ffffff",
-                marginBottom: "32px",
+                color: "#FFFFFF", // Changed to white
+                marginBottom: "20px" 
               }}
             >
-              Mountain Home at 2600 metres ASL
+              We are your safe getaway.
             </p>
-            <p
-              style={{
-                fontFamily: "Lato",
-                fontWeight: 100,
+            
+            {/* PARAGRAPH */}
+            <p 
+              className="max-w-2xl mx-auto"
+              style={{ 
+                fontFamily: "'Lato', sans-serif",
+                fontWeight: 400,
                 fontSize: "18px",
-                lineHeight: "100%",
+                lineHeight: "140%", // Slightly increased for readability on dark background
                 letterSpacing: "0%",
                 textAlign: "center",
-                color: "#ffffff",
+                color: "#D1D5DB", // Light gray so it doesn't fight the headings
                 marginBottom: "64px",
               }}
             >
-              The valley is our classroom. Before you reach the summit, you must find your feet. We <br /> offer the space for families and first-timers to witness the snow without the fear.
+              The mountain takes; the hearth gives back. Recovery is not a luxury; it is a 
+              requirement. This is where the body heals and the story of the climb is told.
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* CARDS CONTAINER: Exact 10px gap, wrapping for smaller screens */}
+            <div className="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[30px] w-full mx-auto">
               {[
-                { img: hotelImg, label: "HOTEL" },
-                { img: cottageImg, label: "COTTAGE" },
-              ].map((item, idx) => (
-                <div key={idx} className="relative group overflow-hidden border-2 border-white/40 shadow-2xl rounded-sm aspect-[16/9]">
-                  <img
-                    src={item.img}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                { img: hotelImg, title: "Hotel" },
+                { img: cottageImg, title: "Cottage" }
+              ].map((card, idx) => (
+                <div 
+                  key={idx} 
+                  /* EXACT Dimensions: 570px width, 425px height */
+                  className="relative group overflow-hidden shadow-2xl w-full lg:w-[570px] h-[425px] border border-white/10 shrink-0"
+                >
+                  <img 
+                    src={card.img} 
+                    alt={card.title} 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
                   />
                   
-                  {/* BOTTOM BLUR SECTION - Matching the Image */}
-                  <div className="absolute inset-x-0 bottom-0 bg-black/20 backdrop-blur-sm pt-0 pb-4 flex flex-col items-center justify-end border-t border-white/10">
-                    <h3 
+                  {/* BLURRED BOTTOM SECTION - Increased opacity slightly for the dark theme */}
+                  <div className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center pt-5 pb-7 border-t border-white/20">
+                    <p 
+                      className="text-white mb-4 px-2"
                       style={{ 
-                        fontFamily: "Anton", 
-                        fontSize: "42px", 
-                        color: "white", 
-                        textTransform: "uppercase",
-                        letterSpacing: "0.05em",
-                        marginBottom: "12px"
+                        fontFamily: "'Lato', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "20px",
+                        lineHeight: "100%",
+                        letterSpacing: "0%",
+                        textAlign: "center",
                       }}
                     >
-                      {item.label}
-                    </h3>
-                    <button className="px-10 py-2  border border-blue-400/60 bg-black/40 text-white text-xs font-bold uppercase tracking-widest rounded-md hover:bg-white hover:text-black transition-all">
-                      Stay With Us
-                    </button>
+                      {card.title}
+                    </p>
+                    
+                    {/* Gradient Border Button: "Stay With Us" */}
+                    <div className="rounded-[6px] p-[1.5px] bg-gradient-to-r from-[#FFFFFF] to-[#00A3FF]">
+                      <button 
+                        className="bg-[#366498] text-white text-sm tracking-wide px-10 py-2 rounded-[4.5px] transition-colors w-full h-full hover:bg-[#2c5275]"
+                        style={{ fontFamily: "'Lato', sans-serif" }}
+                      >
+                        Stay With Us
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </motion.div>
         </div>
+        
+        {/* REVEAL GAP: Holds the background visible before the next section slides up */}
         <div className="h-[80vh] pointer-events-none" />
       </div>
     </section>

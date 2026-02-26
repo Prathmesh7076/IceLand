@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import mountainBg from "@/assets/Explore background.jpg"; 
 import cloudImg from "@/assets/cloud.png";
 import patalsuImg from "@/assets/Explore patalsu peak.jpg";
+import beasKundImg from "@/assets/byaskund.avif"; // <-- Added second image import
 
 const MountainSection = () => {
   return (
@@ -48,77 +49,124 @@ const MountainSection = () => {
         */}
         <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-[25vh] pb-20">
           <motion.div
-            className="max-w-5xl mx-auto text-center"
+            className="max-w-6xl mx-auto text-center"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: false }}
           >
             <h2 
-  className="text-black text-center uppercase mb-6" 
-  style={{ 
-    fontFamily: "'Anton', sans-serif", // Ensure Anton is loaded in your project
-    fontWeight: 400,
-    fontSize: "80px",
-    lineHeight: "100%",
-    letterSpacing: "0%",
-  }}
->
-  The Mountain
-</h2>
-           <p 
-  className="text-gray-950 text-center mb-10" 
-  style={{ 
-    fontFamily: "'Lato', sans-serif",
-    fontWeight: 700,
-    fontSize: "36.81px",
-    lineHeight: "100%",
-    letterSpacing: "0%",
-  }}
->
-  We are your local wise guide at 5500 metres ASL.
-</p>
+              className="text-black text-center uppercase mb-6" 
+              style={{ 
+                fontFamily: "'Anton', sans-serif", 
+                fontWeight: 400,
+                fontSize: "54px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+              }}
+            >
+              The Mountain
+            </h2>
+            <p 
+              className="text-gray-950 text-center mb-6" 
+              style={{ 
+                fontFamily: "'Lato', sans-serif",
+                fontWeight: 700,
+                fontSize: "20px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+              }}
+            >
+              We are your local wise guide at 5500 metres ASL.
+            </p>
 
-    <p 
-  className="text-[#090909] text-center mb-16" 
-  style={{ 
-    fontFamily: "'Lato', sans-serif",
-    fontWeight: 700,
-    fontSize: "18px",
-    lineHeight: "100%",
-    letterSpacing: "0%",
-  }}
-  >
-    For those who seek the ridge. This is the transition from tourist to climber.<br/> We provide the technical grit, the expert "beta," and the 3 AM alpine start.
-</p>
-           <div className="relative max-w-4xl mx-auto group overflow-hidden rounded-sm shadow-2xl aspect-[16/9] border border-white/20">
-  <img 
-    src={patalsuImg} 
-    alt="Patalsu" 
-    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-20" 
-  />
-  {/* Added backdrop-blur-md for the frosted effect on the bottom */}
-  {/* BLURRED BOTTOM SECTION */}
-  <div className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm pt-10 pb-10 text-center border-t border-white/10">
-    <p 
-      style={{ 
-        fontFamily: "Anton",
-        fontWeight: 400,
-        fontSize: "48px",
-        lineHeight: "100%",
-        letterSpacing: "0%",
-        textAlign: "center",
-        textTransform: "uppercase",
-        color: "white"
-      }}
-    >
-      Patalsu Peak
-    </p>
-  </div>
-</div>
-            </motion.div>
+            <p 
+              className="text-[#090909] text-center mb-10" 
+              style={{ 
+                fontFamily: "'Lato', sans-serif",
+                fontWeight: 700,
+                fontSize: "18px",
+                lineHeight: "100%",
+                letterSpacing: "0%",
+              }}
+            >
+              For those who seek the ridge. This is the transition from tourist to climber.<br/> We provide the technical grit, the expert "beta," and the 3 AM alpine start.
+            </p>
+            
+            {/* --- CARDS CONTAINER --- */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-[30px] w-full mx-auto">
+              
+              {/* CARD 1: PATALSU PEAK */}
+              <div className="relative group overflow-hidden border border-white/20 shadow-xl w-full md:w-[569px] h-[425px]">
+                <img 
+                  src={patalsuImg} 
+                  alt="Patalsu Peak" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                />
+                
+                {/* BLURRED BOTTOM SECTION WITH BUTTON */}
+                <div className="absolute inset-x-0 bottom-0 bg-black/10 backdrop-blur-sm flex flex-col items-center justify-center pt-2 pb-4 border-t border-white/20">
+                  <p 
+                    className="text-white  mb-4"
+                    style={{ 
+                      fontFamily: "'Lato', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                    }}
+                  >
+                    Patalsu Peak
+                  </p>
+                  <div className="rounded-[6px] p-[1.5px] bg-gradient-to-r from-[#FFFFFF] to-[#00A3FF]">
+                <button 
+                  className="bg-[#366498] text-white text-sm tracking-wide px-14 py-2 rounded-[4.5px] transition-colors w-full h-full hover:bg-[#2c5275]"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Join Us
+                </button>
+              </div>
+                </div>
+              </div>
+
+              {/* CARD 2: BEAS KUND */}
+              <div className="relative group overflow-hidden border border-white/10 shadow-2xl w-full md:w-[569px] h-[425px]">
+                <img 
+                  src={beasKundImg} 
+                  alt="Beas Kund" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                />
+                
+                {/* BLURRED BOTTOM SECTION WITH BUTTON */}
+                <div className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center pt-2 pb-4 border-t border-white/20">
+                  <p 
+                    className="text-white mb-4"
+                    style={{ 
+                      fontFamily: "'Lato', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                    }}
+                  >
+                    Beas Kund
+                  </p>
+                   <div className="rounded-[6px] p-[1.5px] bg-gradient-to-r from-[#FFFFFF] to-[#00A3FF]">
+                <button 
+                  className="bg-[#366498] text-white text-sm tracking-wide px-14 py-2 rounded-[4.5px] transition-colors w-full h-full hover:bg-[#2c5275]"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Join Us
+                </button>
+              </div>
+                </div>
+              </div>
+
             </div>
-
+          </motion.div>
+        </div>
         
         {/* Spacer to show background before section moves up */}
         <div className="h-[80vh] pointer-events-none" /> 

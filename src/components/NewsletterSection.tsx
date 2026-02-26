@@ -77,11 +77,11 @@ const NewsletterSection = () => {
     className="w-full h-full flex items-center justify-center bg-[#0F172A] hover:bg-slate-900 transition-colors"
     style={{ 
       borderRadius: "10px",
-      fontSize: "20px",
+      fontSize: "18px",
       fontFamily: "'Lato', sans-serif"
     }}
   >
-    Join the crew
+    Send Me
   </div>
 </button>
           </form>

@@ -3,10 +3,10 @@ import { Play } from "lucide-react";
 import skierVideoImg from "@/assets/skier-video.jpg"; 
 
 const stats = [
-  { value: "30", label: "Winters Witnessed" },
-  { value: "12,772", label: "Highest Footprint (ft)" },
-  { value: "0", label: "Compromises on Safety" },
-  { value: "∞", label: "Cups of Chai Served" },
+  { value: "5500", label: "The highest altitude reached" },
+  { value: "100%", label: "Technical Gear Reliability" },
+  { value: "3AM", label: "The Standard Start TIme" }
+  
 ];
 
 const AboutSection = () => {
@@ -21,7 +21,7 @@ const AboutSection = () => {
   className="text-iceland-navy uppercase mb-6 text-center"
   style={{
     fontFamily: "'Anton', sans-serif",
-    fontSize: "80px",
+    fontSize: "48px",
     fontWeight: 400,
     lineHeight: "100%",
     letterSpacing: "0",
@@ -68,13 +68,13 @@ const AboutSection = () => {
 
         {/* Stats bar */}
         <div className="max-w-4xl mx-auto rounded-sm bg-[#366498]">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-2 md:grid-cols-3">
             {stats.map((stat, index) => (
-              <div key={index} className="py-5 px-4 text-center">
-                <p className="text-white text-xl md:text-2xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>
+              <div key={index} className="py-5 px-14 text-start ">
+                <p className="text-white text-xl md:text-xl font-lato" style={{ fontFamily: "var(--font-lato)" }}>
                   {stat.value}
                 </p>
-                <p className="text-white/80 text-[10px] md:text-xs mt-1 tracking-wide">
+                <p className="text-white/80 text-[14px] md:text-sm mt-1 tracking-normal">
                   {stat.label}
                 </p>
               </div>
